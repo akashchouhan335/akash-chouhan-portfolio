@@ -2827,7 +2827,7 @@
 
                 <!-- Contact Form -->
                 <div class="contact-form-box glass" data-aos="flip-right">
-                    <form id="contact-form" name="contact" data-netlify="true" method="POST" class="contact-form">
+                    <form id="contact-form" name="contact" method="POST" data-netlify="true" class="contact-form"></form>
                         <input type="hidden" name="form-name" value="contact" />
                         <div class="form-row">
                             <div class="form-group">
@@ -3186,12 +3186,14 @@
 
                 try {
                     // Send data to Netlify in the background
+                    // Create URL-encoded data for Netlify
                     const formData = new FormData(this);
+                    const urlEncodedData = new URLSearchParams(formData).toString();
 
                     const response = await fetch("/", {
                         method: "POST",
                         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                        body: new URLSearchParams(formData).toString(),
+                        body: urlEncodedData
                     });
 
                     if (response.ok) {
