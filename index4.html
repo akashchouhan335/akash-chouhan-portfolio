@@ -67,7 +67,8 @@
         /* Completely freezes the background on all mobile devices */
         body.no-scroll {
             overflow: hidden !important;
-            touch-action: none; /* Disables touch dragging on the background */
+            touch-action: none;
+            /* Disables touch dragging on the background */
         }
 
         a {
@@ -2556,25 +2557,30 @@
                 <div class="proj-sec glass glass-hover" data-aos="fade-up-left" data-aos-delay="200">
                     <div class="proj-sec-img">
                         <div class="proj-sec-overlay">
-                            <i class="fas fa-globe text-secondary" style="font-size: 2.25rem;"></i>
+                            <i class="fas fa-code text-secondary" style="font-size: 2.25rem;"></i>
                         </div>
                     </div>
-                    <h3 class="proj-sec-title">Premium Portfolio V1</h3>
-                    <p class="proj-sec-desc">A highly interactive, fully responsive personal portfolio designed to
-                        highlight technical proficiency and leadership background to recruiters.</p>
+                    <h3 class="proj-sec-title">Personal Developer Portfolio</h3>
+
+                    <p class="proj-sec-desc">My digital resume engineered to showcase my Java backend projects, DSA
+                        milestones, and leadership journey. Designed from the ground up using pure Vanilla CSS for
+                        maximum control and performance, featuring a permanent dark futuristic aesthetic and a fully
+                        responsive glassmorphism UI.</p>
 
                     <div class="proj-tags" style="margin-bottom:1.5rem;">
-                        <span class="proj-tag">HTML/CSS</span>
+                        <span class="proj-tag">Vanilla CSS</span>
+                        <span class="proj-tag">HTML5</span>
                         <span class="proj-tag">JavaScript</span>
-                        <span class="proj-tag">Animations</span>
+                        <span class="proj-tag">Responsive Design</span>
                     </div>
 
                     <div style="display:flex; gap:1rem;">
-                        <a href="#" class="btn-proj-full glass">Source Code <i class="fab fa-github"
-                                style="margin-left:0.25rem;"></i></a>
+                        <a href="https://github.com/akashchouhan335/akash-chouhan-portfolio.git" target="_blank"
+                            class="btn-proj-full glass">
+                            Source Code <i class="fab fa-github" style="margin-left:0.25rem;"></i>
+                        </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -2821,8 +2827,7 @@
 
                 <!-- Contact Form -->
                 <div class="contact-form-box glass" data-aos="flip-right">
-                    <form id="contact-form" name="contact" data-netlify="true" method="POST"
-                        class="contact-form">
+                    <form id="contact-form" name="contact" data-netlify="true" method="POST" class="contact-form">
                         <input type="hidden" name="form-name" value="contact" />
                         <div class="form-row">
                             <div class="form-group">
@@ -2980,7 +2985,7 @@
                 mobileIcon.classList.remove('fa-times');
                 mobileIcon.classList.add('fa-bars');
             })
-            });
+        });
 
         // // Close menu, restore scroll, and reset icon when a link is clicked
         // document.querySelectorAll('#mobile-menu a').forEach(link => {
@@ -3057,7 +3062,7 @@
                 { src: 'NSS/Camp/2.jpg', caption: 'Bouquet to Vice Chancellor' },
                 { src: 'NSS/Camp/3.jpg', caption: 'NSS Campaign - Volunteers' },
                 { src: 'NSS/Camp/4.jpg', caption: 'NSS CAMP DAY - 1' },
-                { src: 'NSS/Camp/5.jpg', caption: 'NSS Campaign'},
+                { src: 'NSS/Camp/5.jpg', caption: 'NSS Campaign' },
                 { src: 'NSS/Camp/6.jpg', caption: 'Appriciated by Faculty' },
                 { src: 'NSS/Camp/7.jpg', caption: 'NSS CAMP DAY - 2' },
                 { src: 'NSS/Camp/8.jpg', caption: 'NSS Education Campaign' },
@@ -3182,7 +3187,7 @@
                 try {
                     // Send data to Netlify in the background
                     const formData = new FormData(this);
-                    
+
                     const response = await fetch("/", {
                         method: "POST",
                         headers: { "Content-Type": "application/x-www-form-urlencoded" },
