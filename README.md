@@ -56,7 +56,7 @@ A real-time AI therapy web platform with secure authentication, interactive chat
 | Role | Organization | Impact |
 |------|-------------|--------|
 | **Co-Head** | NSS Unit (National Service Scheme) | Led 100+ volunteers across rural development drives, health camps & awareness events |
-| **Event Head** | Entrepreneurship Cell (E-Cell) | Organized national-level fests, managed 50+ members, conducted workshops for 500+ students |
+| **Event Head** | Entrepreneurship Cell (E-Cell) | Organized & managed 50+ members, conducted workshops for 500+ students |
 
 ---
 
@@ -71,7 +71,7 @@ A real-time AI therapy web platform with secure authentication, interactive chat
 
 This repository contains the source code for my personal portfolio website — a dark-themed, fully responsive, single-page site built entirely with **vanilla HTML, CSS & JavaScript**.
 
-**[🔗 View Live Portfolio](YOUR_NETLIFY_URL_HERE)**
+**[🔗 View Live Portfolio](https://akashchouhanportfolio.netlify.app/)**
 
 ---
 
