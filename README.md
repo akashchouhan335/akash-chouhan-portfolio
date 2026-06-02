@@ -49,7 +49,7 @@ A real-time AI therapy web platform with secure authentication, interactive chat
 
 #### 📱 Screenshots
 <p align="center">
-  <img src="soulhelp_dashboard.png" alt="SoulHelp Desktop Dashboard Mockup" width="60%">
+  <img src="Minor-project.png" alt="SoulHelp Desktop Dashboard Mockup" width="60%">
   <img src="soulhelp_chat_mobile.png" alt="SoulHelp Mobile Chat Mockup" width="35%">
 </p>
 
