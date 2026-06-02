@@ -12,21 +12,57 @@
 
         // --- 2. Custom Cursor ---
         const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
+        const trails = document.querySelectorAll('.cursor-trail');
 
         if (window.innerWidth > 768) {
+            let mouseX = 0;
+            let mouseY = 0;
+            
+            // Initial positions for dot and all trails
+            let dotPos = { x: 0, y: 0 };
+            let trailPos = Array.from({length: trails.length}, () => ({ x: 0, y: 0 }));
+
             window.addEventListener('mousemove', (e) => {
-                const posX = e.clientX;
-                const posY = e.clientY;
-                cursorDot.style.left = `${posX}px`; cursorDot.style.top = `${posY}px`;
-                setTimeout(() => {
-                    cursorOutline.style.left = `${posX}px`; cursorOutline.style.top = `${posY}px`;
-                }, 50);
+                mouseX = e.clientX;
+                mouseY = e.clientY;
             });
 
-            document.querySelectorAll('a, button, input, textarea, .gal-item').forEach(el => {
-                el.addEventListener('mouseenter', () => cursorOutline.classList.add('cursor-hover'));
-                el.addEventListener('mouseleave', () => cursorOutline.classList.remove('cursor-hover'));
+            function animateCursor() {
+                // Main dot moves very fast to cursor
+                dotPos.x += (mouseX - dotPos.x) * 0.5;
+                dotPos.y += (mouseY - dotPos.y) * 0.5;
+                cursorDot.style.left = `${dotPos.x}px`;
+                cursorDot.style.top = `${dotPos.y}px`;
+
+                // Trails follow each other in a chain
+                let leadX = dotPos.x;
+                let leadY = dotPos.y;
+
+                trails.forEach((trail, index) => {
+                    // Spring physics for trailing effect
+                    trailPos[index].x += (leadX - trailPos[index].x) * 0.35;
+                    trailPos[index].y += (leadY - trailPos[index].y) * 0.35;
+                    
+                    trail.style.left = `${trailPos[index].x}px`;
+                    trail.style.top = `${trailPos[index].y}px`;
+                    
+                    // Scale down and fade out trails the further back they are
+                    let scale = 1 - (index * 0.15);
+                    trail.style.transform = `translate(-50%, -50%) scale(${scale})`;
+                    trail.style.opacity = scale;
+
+                    // Next particle follows this one
+                    leadX = trailPos[index].x;
+                    leadY = trailPos[index].y;
+                });
+                
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+
+            document.querySelectorAll('a, button, input, textarea, .gal-item, .nav-brand').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorDot.classList.add('cursor-hover'));
+                el.addEventListener('mouseleave', () => cursorDot.classList.remove('cursor-hover'));
             });
         }
 
@@ -96,20 +132,206 @@
         //     });
         // });
 
-        // --- 6. Scroll Triggered Skill Bars & Counters ---
-        const skillsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const bar = entry.target;
-                    bar.style.width = bar.getAttribute('data-width');
-                    skillsObserver.unobserve(bar);
-                }
-            });
-        }, { threshold: 0.5 });
+        // --- 6. Terminal Code Editor (Technical Arsenal) ---
+        const terminalCodeData = {
+            core: {
+                lang: 'java',
+                lines: [
+                    '<span class="syn-comment">// ☕ Core Stack — What I Build With</span>',
+                    '',
+                    '<span class="syn-keyword">public class</span> <span class="syn-class">AkashChouhan</span> <span class="syn-bracket">{</span>',
+                    '',
+                    '    <span class="syn-keyword">private</span> <span class="syn-type">String</span>[] <span class="syn-variable">coreSkills</span> = <span class="syn-bracket">{</span>',
+                    '        <span class="syn-string">"Java"</span>,',
+                    '        <span class="syn-string">"Data Structures"</span>,',
+                    '        <span class="syn-string">"Algorithms"</span>,',
+                    '        <span class="syn-string">"Problem Solving"</span>,',
+                    '        <span class="syn-string">"SQL"</span>',
+                    '    <span class="syn-bracket">}</span>;',
+                    '',
+                    '    <span class="syn-keyword">public void</span> <span class="syn-function">solve</span>(<span class="syn-type">Problem</span> <span class="syn-variable">p</span>) <span class="syn-bracket">{</span>',
+                    '        <span class="syn-variable">p</span>.<span class="syn-function">analyze</span>();',
+                    '        <span class="syn-variable">p</span>.<span class="syn-function">optimize</span>();',
+                    '        <span class="syn-variable">p</span>.<span class="syn-function">execute</span>();',
+                    '    <span class="syn-bracket">}</span>',
+                    '<span class="syn-bracket">}</span>'
+                ]
+            },
+            web: {
+                lang: 'javascript',
+                lines: [
+                    '<span class="syn-comment">// 🌐 Web Technologies — Frontend Craft</span>',
+                    '',
+                    '<span class="syn-keyword">const</span> <span class="syn-variable">webSkills</span> = <span class="syn-bracket">{</span>',
+                    '    <span class="syn-property">markup</span>:    <span class="syn-string">"HTML5"</span>,',
+                    '    <span class="syn-property">styling</span>:   <span class="syn-string">"CSS3 / Vanilla CSS"</span>,',
+                    '    <span class="syn-property">scripting</span>: <span class="syn-string">"JavaScript (ES6+)"</span>,',
+                    '    <span class="syn-property">design</span>:    <span class="syn-string">"Responsive & Mobile-First"</span>,',
+                    '<span class="syn-bracket">}</span>;',
+                    '',
+                    '<span class="syn-keyword">function</span> <span class="syn-function">buildUI</span>(<span class="syn-variable">idea</span>) <span class="syn-bracket">{</span>',
+                    '    <span class="syn-keyword">const</span> <span class="syn-variable">layout</span> = <span class="syn-function">createStructure</span>(<span class="syn-variable">idea</span>);',
+                    '    <span class="syn-keyword">const</span> <span class="syn-variable">styles</span> = <span class="syn-function">applyDesign</span>(<span class="syn-variable">layout</span>);',
+                    '    <span class="syn-keyword">return</span> <span class="syn-function">animate</span>(<span class="syn-variable">styles</span>);',
+                    '<span class="syn-bracket">}</span>',
+                    '',
+                    '<span class="syn-function">buildUI</span>(<span class="syn-string">"pixel-perfect experience"</span>);'
+                ]
+            },
+            tools: {
+                lang: 'bash',
+                lines: [
+                    '<span class="syn-comment">#!/bin/bash</span>',
+                    '<span class="syn-comment"># 🛠️ Tools & Platforms I Use Daily</span>',
+                    '',
+                    '<span class="syn-variable">EDITOR</span>=<span class="syn-string">"VS Code + IntelliJ IDEA"</span>',
+                    '<span class="syn-variable">VERSION_CTRL</span>=<span class="syn-string">"Git & GitHub"</span>',
+                    '<span class="syn-variable">OS</span>=<span class="syn-string">"Windows 11"</span>',
+                    '<span class="syn-variable">TERMINAL</span>=<span class="syn-string">"PowerShell / Bash"</span>',
+                    '',
+                    '<span class="syn-keyword">echo</span> <span class="syn-string">"⚡ Loading dev environment..."</span>',
+                    '',
+                    '<span class="syn-keyword">for</span> <span class="syn-variable">tool</span> <span class="syn-keyword">in</span> git java node npm; <span class="syn-keyword">do</span>',
+                    '    <span class="syn-keyword">echo</span> <span class="syn-string">"  ✓ $tool installed"</span>',
+                    '<span class="syn-keyword">done</span>',
+                    '',
+                    '<span class="syn-keyword">echo</span> <span class="syn-string">"🚀 Ready to code!"</span>'
+                ]
+            },
+            soft: {
+                lang: 'yaml',
+                lines: [
+                    '<span class="syn-comment"># 🎯 Soft Skills & Leadership</span>',
+                    '',
+                    '<span class="syn-property">profile</span>:',
+                    '  <span class="syn-property">name</span>: <span class="syn-string">Akash Chouhan</span>',
+                    '  <span class="syn-property">role</span>: <span class="syn-string">Leader & Team Player</span>',
+                    '',
+                    '<span class="syn-property">leadership</span>:',
+                    '  - <span class="syn-string">NSS Unit Head</span>  <span class="syn-comment"># 100+ volunteers</span>',
+                    '  - <span class="syn-string">E-Cell Event Head</span>  <span class="syn-comment"># National-level fests</span>',
+                    '',
+                    '<span class="syn-property">skills</span>:',
+                    '  <span class="syn-property">communication</span>: <span class="syn-string">excellent</span>',
+                    '  <span class="syn-property">event_management</span>: <span class="syn-string">30+ events organized</span>',
+                    '  <span class="syn-property">strategic_thinking</span>: <span class="syn-string">true</span>',
+                    '  <span class="syn-property">team_coordination</span>: <span class="syn-string">cross-functional</span>'
+                ]
+            }
+        };
 
-        document.querySelectorAll('.skill-progress').forEach(bar => {
-            skillsObserver.observe(bar);
-        });
+        let currentTab = 'core';
+        let isTyping = false;
+        let typingTimeout = null;
+        let terminalHasPlayed = false;
+
+        function renderCode(tabId, animate = false) {
+            const data = terminalCodeData[tabId];
+            const codeBlock = document.getElementById('code-block');
+            const lineNumbers = document.getElementById('line-numbers');
+            const statusMsg = document.getElementById('status-msg');
+
+            if (!codeBlock || !lineNumbers) return;
+
+            // Cancel any ongoing typing
+            if (typingTimeout) {
+                clearTimeout(typingTimeout);
+                typingTimeout = null;
+            }
+            isTyping = false;
+
+            const fullHTML = data.lines.join('\n');
+            const lineCount = data.lines.length;
+
+            // Generate line numbers
+            lineNumbers.innerHTML = Array.from({ length: lineCount }, (_, i) => i + 1).join('\n');
+
+            if (animate) {
+                // Typing animation
+                codeBlock.innerHTML = '';
+                isTyping = true;
+                statusMsg.textContent = 'Typing...';
+                document.querySelector('.terminal-window')?.classList.add('terminal-typing');
+
+                let charIndex = 0;
+                // We need plain text for typing, but final result should be HTML
+                const plainLines = data.lines.map(l => {
+                    const tmp = document.createElement('div');
+                    tmp.innerHTML = l;
+                    return tmp.textContent || tmp.innerText;
+                });
+                const plainText = plainLines.join('\n');
+
+                function typeChar() {
+                    if (charIndex <= plainText.length) {
+                        // Show plain text character-by-character, then swap to HTML
+                        codeBlock.textContent = plainText.substring(0, charIndex);
+
+                        // Update status bar line/col
+                        const typed = plainText.substring(0, charIndex);
+                        const currentLine = typed.split('\n').length;
+                        const currentCol = typed.split('\n').pop().length + 1;
+                        const statusRight = document.querySelector('.status-right');
+                        if (statusRight) statusRight.textContent = `UTF-8  |  Ln ${currentLine}, Col ${currentCol}`;
+
+                        charIndex++;
+                        typingTimeout = setTimeout(typeChar, 12);
+                    } else {
+                        // Typing complete — swap to syntax-highlighted HTML
+                        codeBlock.innerHTML = fullHTML;
+                        isTyping = false;
+                        statusMsg.textContent = 'Ready';
+                        document.querySelector('.terminal-window')?.classList.remove('terminal-typing');
+                    }
+                }
+                typeChar();
+            } else {
+                // Instant render (for tab switching after initial animation)
+                codeBlock.innerHTML = fullHTML;
+                statusMsg.textContent = 'Ready';
+            }
+        }
+
+        // Tab switching
+        window.switchTab = function(tabId) {
+            if (tabId === currentTab && !isTyping) return;
+
+            currentTab = tabId;
+
+            // Update tab active states
+            document.querySelectorAll('.terminal-tab').forEach(t => {
+                t.classList.toggle('active', t.getAttribute('data-tab') === tabId);
+            });
+
+            // Fade transition
+            const body = document.getElementById('terminal-body');
+            body.style.opacity = '0';
+            body.style.transform = 'translateY(6px)';
+            body.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+
+            setTimeout(() => {
+                renderCode(tabId, false);
+                body.style.opacity = '1';
+                body.style.transform = 'translateY(0)';
+            }, 200);
+        };
+
+        // Trigger typing animation when section scrolls into view
+        const terminalWindow = document.querySelector('.terminal-window');
+        if (terminalWindow) {
+            const terminalObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !terminalHasPlayed) {
+                    terminalHasPlayed = true;
+                    renderCode('core', true);
+                    terminalObserver.unobserve(terminalWindow);
+                }
+            }, { threshold: 0.3 });
+
+            terminalObserver.observe(terminalWindow);
+
+            // Pre-render fallback (in case observer doesn't fire before user sees it)
+            renderCode('core', false);
+        }
 
         const counters = document.querySelectorAll('.counter');
         const counterSection = document.getElementById('counter-section');

@@ -12,6 +12,8 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -30,9 +32,13 @@
         <div class="loader-ring"></div>
     </div>
 
-    <!-- Custom Cursor -->
+    <!-- Custom Cursor (Cyberpunk Comet) -->
     <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
+    <div class="cursor-trail"></div>
 
     <!-- Animated Background Shapes -->
     <div class="bg-shapes">
@@ -173,71 +179,46 @@
                 <div class="title-underline"></div>
             </div>
 
-            <div class="skills-grid">
-                <div class="skill-col" data-aos="slide-right" data-aos-delay="100">
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name"><i class="fab fa-java text-primary"></i> Java</span>
-                            <span class="skill-percent-highlight">90%</span>
-                        </div>
-                        <div class="skill-bg">
-                            <div class="skill-progress prog-gradient" data-width="90%"></div>
-                        </div>
+            <div class="terminal-window" data-aos="fade-up">
+                <!-- Terminal Title Bar -->
+                <div class="terminal-titlebar">
+                    <div class="terminal-dots">
+                        <span class="td td-red"></span>
+                        <span class="td td-yellow"></span>
+                        <span class="td td-green"></span>
                     </div>
-
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name-sm">Data Structures</span>
-                            <span class="skill-percent">50%</span>
-                        </div>
-                        <div class="skill-bg">
-                            <div class="skill-progress prog-primary" data-width="50%"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name-sm">Algorithms</span>
-                            <span class="skill-percent">10%</span>
-                        </div>
-                        <div class="skill-bg">
-                            <div class="skill-progress prog-primary" data-width="10%"></div>
-                        </div>
+                    <div class="terminal-tabs">
+                        <button class="terminal-tab active" data-tab="core" onclick="switchTab('core')">
+                            <i class="fab fa-java"></i> core_stack.java
+                        </button>
+                        <button class="terminal-tab" data-tab="web" onclick="switchTab('web')">
+                            <i class="fab fa-js"></i> web_tech.js
+                        </button>
+                        <button class="terminal-tab" data-tab="tools" onclick="switchTab('tools')">
+                            <i class="fas fa-terminal"></i> tools.sh
+                        </button>
+                        <button class="terminal-tab" data-tab="soft" onclick="switchTab('soft')">
+                            <i class="fas fa-file-alt"></i> soft_skills.yaml
+                        </button>
                     </div>
                 </div>
 
-                <div class="skill-col" data-aos="slide-left" data-aos-delay="200">
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name-sm">Problem Solving</span>
-                            <span class="skill-percent">75%</span>
-                        </div>
-                        <div class="skill-bg">
-                            <div class="skill-progress prog-secondary" data-width="75%"></div>
-                        </div>
+                <!-- Terminal Body -->
+                <div class="terminal-body" id="terminal-body">
+                    <div class="terminal-content">
+                        <!-- Line numbers column -->
+                        <div class="line-numbers" id="line-numbers"></div>
+                        <!-- Code content -->
+                        <pre class="code-block" id="code-block"></pre>
                     </div>
+                    <div class="terminal-cursor" id="terminal-cursor"></div>
+                </div>
 
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name-sm"><i class="fab fa-html5" style="color:#f97316;"></i> HTML &
-                                CSS</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-bg">
-                            <div class="skill-progress prog-secondary" data-width="90%"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name-sm"><i class="fab fa-js" style="color:#facc15;"></i>
-                                JavaScript</span>
-                            <span class="skill-percent">75%</span>
-                        </div>
-                        <div class="skill-bg">
-                            <div class="skill-progress prog-secondary" data-width="75%"></div>
-                        </div>
-                    </div>
+                <!-- Terminal Footer / Status Bar -->
+                <div class="terminal-statusbar">
+                    <span class="status-left"><i class="fas fa-code-branch"></i> main</span>
+                    <span class="status-center" id="status-msg">Ready</span>
+                    <span class="status-right">UTF-8 &nbsp;|&nbsp; Ln 1, Col 1</span>
                 </div>
             </div>
         </div>

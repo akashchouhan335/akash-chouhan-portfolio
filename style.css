@@ -198,41 +198,47 @@
         }
 
         .cursor-dot,
-        .cursor-outline {
+        .cursor-trail {
             position: fixed;
             top: 0;
             left: 0;
-            transform: translate(-50%, -50%);
             border-radius: 50%;
             z-index: 9999;
             pointer-events: none;
             display: none;
+            transform: translate(-50%, -50%);
         }
 
+        /* Cyberpunk Comet Core */
         .cursor-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+            transition: width 0.2s, height 0.2s, background-color 0.2s, border 0.2s;
+        }
+
+        /* The Trail Particles */
+        .cursor-trail {
             width: 8px;
             height: 8px;
-            background-color: var(--primary);
+            background-color: var(--secondary);
+            box-shadow: 0 0 10px var(--secondary);
+            /* Transform and opacity are handled dynamically by JS */
         }
 
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 2px solid rgba(0, 240, 255, 0.5);
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-        }
-
+        /* Hover effect transforms the core into a glowing tech target */
         .cursor-hover {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(0, 240, 255, 0.1);
-            border-color: transparent;
+            width: 45px;
+            height: 45px;
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 15px var(--primary) inset, 0 0 15px var(--primary);
         }
 
         @media (min-width: 768px) {
-
             .cursor-dot,
-            .cursor-outline {
+            .cursor-trail {
                 display: block;
             }
         }
@@ -826,77 +832,242 @@
         }
 
         /* =========================================
-           8. SKILLS
+           8. TECHNICAL ARSENAL — CODE EDITOR THEME
            ========================================= */
         .bg-overlay-dark {
             background-color: rgba(0, 0, 0, 0.2);
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
+        .terminal-window {
+            max-width: 56rem;
+            margin: 0 auto;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow:
+                0 0 0 1px rgba(0, 0, 0, 0.3),
+                0 25px 60px -12px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(0, 240, 255, 0.05);
+            transition: box-shadow 0.5s ease, transform 0.3s ease;
         }
 
-        @media (min-width: 768px) {
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .terminal-window:hover {
+            box-shadow:
+                0 0 0 1px rgba(0, 240, 255, 0.15),
+                0 30px 70px -12px rgba(0, 0, 0, 0.6),
+                0 0 60px rgba(0, 240, 255, 0.08);
+            transform: translateY(-3px);
         }
 
-        .skill-col {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .skill-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-name {
-            font-weight: 600;
-            font-size: 1.125rem;
+        /* Title Bar */
+        .terminal-titlebar {
+            background: linear-gradient(180deg, #2d2d2d 0%, #252525 100%);
+            padding: 0.6rem 1rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            overflow-x: auto;
+            scrollbar-width: none;
         }
 
-        .skill-name-sm {
+        .terminal-titlebar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .td {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        .td:hover {
+            transform: scale(1.25);
+            filter: brightness(1.3);
+        }
+
+        .td-red { background-color: #ff5f57; }
+        .td-yellow { background-color: #febc2e; }
+        .td-green { background-color: #28c840; }
+
+        /* Tabs */
+        .terminal-tabs {
+            display: flex;
+            gap: 0;
+            flex-shrink: 0;
+        }
+
+        .terminal-tab {
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
             font-weight: 500;
+            color: #6b7280;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
+            white-space: nowrap;
+            transition: color 0.25s ease, background 0.25s ease;
+            position: relative;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
         }
 
-        .skill-bg {
-            height: 0.5rem;
-            width: 100%;
-            background-color: #1f2937;
-            border-radius: 9999px;
+        .terminal-tab:hover {
+            color: #d1d5db;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .terminal-tab.active {
+            color: #fff;
+            background: #1e1e1e;
+        }
+
+        .terminal-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+            box-shadow: 0 0 8px var(--primary);
+        }
+
+        .terminal-tab i {
+            font-size: 0.8rem;
+        }
+
+        /* Terminal Body */
+        .terminal-body {
+            background: #1e1e1e;
+            padding: 1.25rem 0;
+            min-height: 18rem;
+            position: relative;
             overflow: hidden;
         }
 
-        .skill-progress {
-            width: 0;
-            height: 100%;
-            border-radius: 9999px;
-            transition: width 1.5s cubic-bezier(0.1, 0.5, 0.1, 1);
+        .terminal-content {
+            display: flex;
+            gap: 0;
         }
 
-        .prog-gradient {
-            background: linear-gradient(to right, #22d3ee, #2563eb);
-            box-shadow: 0 0 10px var(--primary);
+        /* Line Numbers */
+        .line-numbers {
+            padding: 0 0.75rem 0 1.25rem;
+            text-align: right;
+            color: #4a5568;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.8rem;
+            line-height: 1.75;
+            user-select: none;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            flex-shrink: 0;
+            min-width: 2.5rem;
         }
 
-        .prog-primary {
-            background-color: rgba(0, 240, 255, 0.8);
+        /* Code Block */
+        .code-block {
+            margin: 0;
+            padding: 0 1.25rem;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.8rem;
+            line-height: 1.75;
+            color: #d4d4d4;
+            overflow-x: auto;
+            white-space: pre;
+            flex: 1;
         }
 
-        .prog-secondary {
-            background-color: rgba(121, 40, 202, 0.8);
+        /* Syntax Highlighting Colors */
+        .code-block .syn-keyword { color: #c586c0; }
+        .code-block .syn-class { color: #4ec9b0; }
+        .code-block .syn-type { color: #4ec9b0; }
+        .code-block .syn-string { color: #ce9178; }
+        .code-block .syn-comment { color: #6a9955; font-style: italic; }
+        .code-block .syn-function { color: #dcdcaa; }
+        .code-block .syn-variable { color: #9cdcfe; }
+        .code-block .syn-number { color: #b5cea8; }
+        .code-block .syn-operator { color: #d4d4d4; }
+        .code-block .syn-bracket { color: #ffd700; }
+        .code-block .syn-decorator { color: #dcdcaa; }
+        .code-block .syn-property { color: #9cdcfe; }
+        .code-block .syn-tag { color: #569cd6; }
+        .code-block .syn-symbol { color: #569cd6; }
+
+        /* Blinking Cursor */
+        .terminal-cursor {
+            display: none;
+        }
+
+        /* Status Bar */
+        .terminal-statusbar {
+            background: linear-gradient(180deg, #007acc 0%, #0065a9 100%);
+            padding: 0.2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .status-left, .status-right {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .status-center {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 640px) {
+            .status-right { display: none; }
+        }
+
+        /* Active line highlight */
+        .code-line-active {
+            background: rgba(255, 255, 255, 0.04);
+            display: block;
+        }
+
+        /* Typing animation glow */
+        @keyframes terminalGlow {
+            0%, 100% { box-shadow: 0 0 40px rgba(0, 240, 255, 0.05); }
+            50% { box-shadow: 0 0 60px rgba(0, 240, 255, 0.12); }
+        }
+
+        .terminal-typing {
+            animation: terminalGlow 2s ease-in-out infinite;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 640px) {
+            .terminal-body {
+                min-height: 14rem;
+            }
+            .code-block {
+                font-size: 0.7rem;
+            }
+            .line-numbers {
+                font-size: 0.7rem;
+                padding: 0 0.5rem 0 0.75rem;
+                min-width: 2rem;
+            }
+            .terminal-tab {
+                font-size: 0.65rem;
+                padding: 0.35rem 0.6rem;
+            }
         }
 
         /* =========================================
