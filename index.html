@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Akash Chouhan - Aspiring Software Developer, Java Developer, and DSA Enthusiast. View my projects, leadership experience, and patent.">
+    <meta name="keywords" content="Akash Chouhan, Java Developer, Software Developer, Portfolio, DSA, Web Development">
+    <title>Akash Chouhan</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-ring"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Animated Background Shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-blue"></div>
+        <div class="shape shape-purple"></div>
+        <div class="shape shape-cyan"></div>
+    </div>
+
+    <!-- Redesigned Floating Navbar -->
+    <nav class="navbar glass" id="navbar">
+        <div class="nav-inner">
+            <div class="nav-brand-wrap">
+                <a href="#" class="nav-brand text-gradient">&lt;Akash&gt;</a>
+            </div>
+            <!-- Desktop Menu -->
+            <div class="nav-links-desktop">
+                <div class="nav-links-list">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#leadership" class="nav-link">Leadership</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+            <!-- Mobile menu button -->
+            <div class="nav-mobile-toggle">
+                <button id="mobile-menu-btn" class="mobile-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="nav-mobile-menu hidden glass" id="mobile-menu">
+            <div class="nav-mobile-inner">
+                <a href="#home" class="nav-mobile-link">Home</a>
+                <a href="#about" class="nav-mobile-link">About</a>
+                <a href="#skills" class="nav-mobile-link">Skills</a>
+                <a href="#projects" class="nav-mobile-link">Projects</a>
+                <a href="#leadership" class="nav-mobile-link">Leadership</a>
+                <a href="#contact" class="nav-mobile-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+        <div class="container hero-inner">
+
+            <div class="hero-text" data-aos="zoom-out-right">
+                <h2 class="hero-subtitle">HELLO WORLD, I AM</h2>
+                <h1 class="hero-title">
+                    Akash <span id="smoke-target" class="text-gradient relative-inline">Chouhan</span>
+                </h1>
+                <div class="hero-typed-box">
+                    <span id="typed-text"></span>
+                </div>
+                <p class="hero-desc">
+                    Exploring the universe of software development through clean code and scalable systems. Crafting
+                    powerful backend logic that fuels meaningful digital experiences.
+                </p>
+
+                <div class="hero-btn-group">
+                    <a href="#projects" class="btn-primary-solid">
+                        View Projects
+                    </a>
+                    <a href="#leadership" class="btn-outline glass">
+                        Achievements
+                    </a>
+                    <a href="Akash Resume - Software Developer.pdf" target="_blank"
+                        class="btn-outline btn-outline-purple glass">
+                        <i class="fas fa-download"></i> Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <a href="#about" class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title">About <span class="text-primary">Me</span></h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="glass glass-hover about-card" data-aos="fade-up-right">
+                    <div class="about-decor"></div>
+                    <h3 class="about-h3 text-gradient">Professional Summary</h3>
+                    <p class="about-p">
+                        I am a 6th-semester B.Tech student with a profound focus on Java backend development and Data
+                        Structures & Algorithms. My career objective is to secure a challenging placement where I can
+                        architect scalable software solutions.
+                    </p>
+                    <p class="about-p" style="margin-bottom:1rem;">
+                        Beyond coding, I thrive in leadership environments. Operating as the Event Head at E-Cell and
+                        Co-Head of our NSS Unit has honed my management, communication, and strategic execution skills.
+                    </p>
+                    <div class="about-tag glass">
+                        <span class="about-tag-label">Core Focus:</span> Java, DSA <span
+                            class="about-tag-light">(Familiar with Web Devlopment)</span>
+                    </div>
+                </div>
+
+                <div class="features-grid" data-aos="flip-left">
+                    <div class="glass glass-hover feature-box fb-primary">
+                        <i class="fas fa-laptop-code fb-icon text-primary"></i>
+                        <h4 class="fb-title">Problem Solver</h4>
+                        <p class="fb-desc">Tackling complex DSA challenges efficiently.</p>
+                    </div>
+                    <div class="glass glass-hover feature-box fb-secondary">
+                        <i class="fas fa-users fb-icon text-secondary"></i>
+                        <h4 class="fb-title">Team Leader</h4>
+                        <p class="fb-desc">Managing diverse teams across tech & social events.</p>
+                    </div>
+                    <div class="glass glass-hover feature-box fb-purple">
+                        <i class="fas fa-bullseye fb-icon" style="color:#a855f7;"></i>
+                        <h4 class="fb-title">Placement Driven</h4>
+                        <p class="fb-desc">Highly motivated to contribute to innovative tech teams in the industry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section-padding bg-overlay-dark">
+        <div class="container">
+            <div class="section-header" data-aos="zoom-in">
+                <h2 class="section-title">Technical <span class="text-secondary">Arsenal</span></h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-col" data-aos="slide-right" data-aos-delay="100">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name"><i class="fab fa-java text-primary"></i> Java</span>
+                            <span class="skill-percent-highlight">90%</span>
+                        </div>
+                        <div class="skill-bg">
+                            <div class="skill-progress prog-gradient" data-width="90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name-sm">Data Structures</span>
+                            <span class="skill-percent">50%</span>
+                        </div>
+                        <div class="skill-bg">
+                            <div class="skill-progress prog-primary" data-width="50%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name-sm">Algorithms</span>
+                            <span class="skill-percent">10%</span>
+                        </div>
+                        <div class="skill-bg">
+                            <div class="skill-progress prog-primary" data-width="10%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-col" data-aos="slide-left" data-aos-delay="200">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name-sm">Problem Solving</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bg">
+                            <div class="skill-progress prog-secondary" data-width="75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name-sm"><i class="fab fa-html5" style="color:#f97316;"></i> HTML &
+                                CSS</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bg">
+                            <div class="skill-progress prog-secondary" data-width="90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name-sm"><i class="fab fa-js" style="color:#facc15;"></i>
+                                JavaScript</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bg">
+                            <div class="skill-progress prog-secondary" data-width="75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUNTER SECTION -->
+    <section id="stats" class="counter-section">
+        <div class="container">
+            <div class="counter-grid" id="counter-section">
+                <div data-aos="flip-up" data-aos-delay="0">
+                    <div class="counter-num text-gradient"><span class="counter" data-target="20">0</span>+</div>
+                    <div class="counter-label">DSA Problems</div>
+                </div>
+                <div data-aos="flip-up" data-aos-delay="100">
+                    <div class="counter-num text-gradient"><span class="counter" data-target="30">0</span>+</div>
+                    <div class="counter-label">Events Organized & Managed</div>
+                </div>
+                <div data-aos="flip-up" data-aos-delay="200">
+                    <div class="counter-num text-gradient"><span class="counter" data-target="2">0</span></div>
+                    <div class="counter-label">Leadership Roles</div>
+                </div>
+                <div data-aos="flip-up" data-aos-delay="300">
+                    <div class="counter-num text-gradient"><span class="counter" data-target="1">0</span></div>
+                    <div class="counter-label">Patent Filed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="zoom-in-up">
+                <h2 class="section-title">Featured <span class="text-primary">Projects</span></h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Highlighted Minor Project -->
+                <div class="proj-main glass glass-hover" data-aos="fade-up-right">
+                    <div class="proj-glow"></div>
+                    <div class="proj-inner">
+                        <div class="proj-img-wrap">
+                            <div class="proj-img-box">
+                                <img src="soulhelp_dashboard.png" alt="SoulHelp AI Mental Wellness Ecosystem" class="proj-img">
+                                <div class="proj-img-overlay"></div>
+                                <span class="proj-badge">Featured Project</span>
+                            </div>
+                        </div>
+                        <div class="proj-content">
+                            <h3 class="proj-title">SoulHelp – AI Powered Mental Wellness Ecosystem</h3>
+                            <p class="proj-desc"><span class="text-color" style="font-weight:800;">Problem:</span>
+                                Millions struggle silently with stress, anxiety, and emotional challenges due to lack of
+                                immediate, affordable mental health support.</p>
+                            <p class="proj-desc"><span class="text-color" style="font-weight:800;">Solution:</span>
+                                Developed a real-time AI-enabled therapy web platform that integrates secure
+                                authentication, interactive chat architecture, and intelligent response systems to
+                                deliver 24/7 virtual mental wellness support.</p>
+
+                            <div style="padding-top:0.5rem;">
+                                <h4 class="proj-tech-title">Tech Stack</h4>
+                                <div class="proj-tags">
+                                    <span class="proj-tag">HTML</span>
+                                    <span class="proj-tag">CSS</span>
+                                    <span class="proj-tag">AI Chat Integration</span>
+                                    <span class="proj-tag">Basic Backend Integration</span>
+                                </div>
+                            </div>
+
+                            <div class="proj-links">
+                                <!-- <a href="#" class="btn-proj-primary">Demo <i class="fas fa-external-link-alt"
+                                        style="margin-left:0.25rem;"></i></a> -->
+                                <a href="https://github.com/akashchouhan335/SoulHelp-" target="_blank"
+                                    class="btn-proj-secondary glass">GitHub <i class="fab fa-github"
+                                        style="margin-left:0.25rem;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Project: Portfolio -->
+                <div class="proj-sec glass glass-hover" data-aos="fade-up-left" data-aos-delay="200">
+                    <div class="proj-sec-img">
+                        <div class="proj-sec-overlay">
+                            <i class="fas fa-code text-secondary" style="font-size: 2.25rem;"></i>
+                        </div>
+                    </div>
+                    <h3 class="proj-sec-title">Personal Developer Portfolio</h3>
+
+                    <p class="proj-sec-desc">My digital resume engineered to showcase my Java backend projects, DSA
+                        milestones, and leadership journey. Designed from the ground up using pure Vanilla CSS for
+                        maximum control and performance, featuring a permanent dark futuristic aesthetic and a fully
+                        responsive glassmorphism UI.</p>
+
+                    <div class="proj-tags" style="margin-bottom:1.5rem;">
+                        <span class="proj-tag">Vanilla CSS</span>
+                        <span class="proj-tag">HTML5</span>
+                        <span class="proj-tag">JavaScript</span>
+                        <span class="proj-tag">Responsive Design</span>
+                    </div>
+
+                    <div style="display:flex; gap:1rem;">
+                        <a href="https://github.com/akashchouhan335/akash-chouhan-portfolio.git" target="_blank"
+                            class="btn-proj-full glass">
+                            Source Code <i class="fab fa-github" style="margin-left:0.25rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PATENT SECTION -->
+    <section id="patent" class="section-padding" style="padding-top:3rem; padding-bottom:3rem;">
+        <div class="patent-container">
+            <div class="patent-wrap glass glass-hover" data-aos="flip-down">
+                <div class="patent-glow"></div>
+
+                <div class="patent-inner">
+                    <div class="patent-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+
+                    <div class="patent-info">
+                        <div class="patent-head">
+                            <h3 class="patent-title">Research & Patent</h3>
+                            <span class="patent-status">Status: FILED & PUBLISHED</span>
+                        </div>
+                        <h4 class="patent-sub">Wearable System for Adaptive Mental Health Support</h4>
+                        <p class="patent-desc">A bio-medical wearable system designed to provide adaptive mental health
+                            support through real-time stress detection and intelligent haptic feedback. The system
+                            integrates physiological sensors, vibration modules, air compression units, and guided
+                            breathing mechanisms to deliver personalized, non-invasive calming responses.</p>
+                        <div class="patent-id" title="Click to Copy">
+                            Patent ID: IN-202521100865 <i class="far fa-copy" style="margin-left: 0.25rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP & ACHIEVEMENTS SECTION -->
+    <section id="leadership" class="section-padding bg-overlay-30 border-top-subtle">
+        <div class="container">
+            <div class="section-header" data-aos="zoom-in">
+                <h2 class="section-title">Leadership & <span class="text-secondary">Achievements</span></h2>
+                <div class="title-underline" style="width: 8rem;"></div>
+                <p class="section-desc">Driving impact beyond code. A showcase of community building, event management,
+                    and official recognition.</p>
+            </div>
+
+            <!-- Subsection 1: Timeline -->
+            <div class="mb-24">
+                <h3 class="sub-title">
+                    <i class="fas fa-route text-primary"></i> Leadership Journey
+                </h3>
+
+                <div class="timeline-wrapper timeline-line">
+                    <div id="timeline-dot" class="timeline-scroll-dot"></div>
+                    <!-- Timeline Item 1: NSS -->
+                    <div class="time-item" data-aos="fade-down-right">
+
+                        <div class="time-card glass glass-hover">
+                            <span class="time-date">2024 - 2026</span>
+                            <h4 class="time-role">Head</h4>
+                            <h5 class="time-org">NSS Unit (National Service Scheme)</h5>
+                            <ul class="time-list time-list-right">
+                                <li class="time-list-item time-list-item-right"><i class="fas fa-check-circle time-icon"
+                                        style="color:#00f0ff;"></i>Spearheaded rural development and social service
+                                    drives.</li>
+                                <li class="time-list-item time-list-item-right"><i class="fas fa-check-circle time-icon"
+                                        style="color:#00f0ff;"></i>Organized health camps and educational awareness
+                                    events.</li>
+                                <li class="time-list-item time-list-item-right"><i class="fas fa-check-circle time-icon"
+                                        style="color:#00f0ff;"></i>Led a volunteer force of over 100 students.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2: E-Cell -->
+                    <div class="time-item-right" data-aos="fade-up-left">
+
+                        <div class="time-card glass glass-hover">
+                            <span class="time-date">2025 - 2026</span>
+                            <h4 class="time-role">Event Head</h4>
+                            <h5 class="time-org">Entrepreneurship Cell (E-Cell)</h5>
+                            <ul class="time-list">
+                                <li class="time-list-item"><i class="fas fa-check-circle time-icon"
+                                        style="color:#7928ca;"></i>Organized national-level tech & entrepreneurial
+                                    fests.</li>
+                                <li class="time-list-item"><i class="fas fa-check-circle time-icon"
+                                        style="color:#7928ca;"></i>Managed cross-functional coordination of 50+ members.
+                                </li>
+                                <li class="time-list-item"><i class="fas fa-check-circle time-icon"
+                                        style="color:#7928ca;"></i>Conducted workshops impacting 500+ students.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsection 2: Certificates -->
+            <div class="mb-24">
+                <h3 class="sub-title" data-aos="zoom-in-up">
+                    <i class="fas fa-award" style="color:#eab308;"></i> Certifications Showcase
+                </h3>
+
+                <div class="certs-grid">
+                    <div class="cert-box glass" data-aos="flip-left" data-aos-delay="0"
+                        onclick="openLightbox('Ecell/poster.webp')">
+                        <div class="cert-img-wrap">
+                            <img src="Ecell/poster.webp" alt="E-Cell Certificate" class="cert-img">
+                            <div class="cert-overlay">
+                                <i class="fas fa-search-plus" style="font-size:1.875rem; color:#fff;"></i>
+                            </div>
+                        </div>
+                        <p class="cert-title primary">E-Cell Event Head</p>
+                    </div>
+
+                    <div class="cert-box glass" data-aos="flip-left" data-aos-delay="100"
+                        onclick="openLightbox('NSS/NSS B Certificate/Bcertificate.jpg', 'NSS Co-Head Certificate')">
+                        <div class="cert-img-wrap">
+                            <img src="NSS/NSS B Certificate/Bcertificate.jpg" alt="NSS Certificate" class="cert-img">
+                            <div class="cert-overlay">
+                                <i class="fas fa-search-plus" style="font-size:1.875rem; color:#fff;"></i>
+                            </div>
+                        </div>
+                        <p class="cert-title primary">NSS Co-Head</p>
+                    </div>
+
+                    <div class="cert-box glass" data-aos="flip-left" data-aos-delay="200"
+                        onclick="openLightbox('Patent/main.png', 'Patent Publication Certificate')">
+                        <div class="cert-img-wrap">
+                            <img src="Patent/main.png" alt="Patent Certificate" class="cert-img">
+                            <div class="cert-overlay cert-overlay-patent">
+                                <i class="fas fa-search-plus" style="font-size:1.875rem; color:#fff;"></i>
+                            </div>
+                        </div>
+                        <p class="cert-title yellow">Patent Published</p>
+                    </div>
+
+                    <div class="cert-box glass" data-aos="flip-left" data-aos-delay="300"
+                        onclick="openLightbox('soulhelp_dashboard.png')">
+                        <div class="cert-img-wrap">
+                            <img src="soulhelp_dashboard.png" class="cert-img-gray">
+                            <div class="cert-overlay">
+                                <i class="fas fa-search-plus" style="font-size:1.875rem; color:#fff;"></i>
+                            </div>
+                        </div>
+                        <p class="cert-title primary">Minor Project / Java</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsection 3: Event Gallery -->
+            <div>
+                <h3 class="sub-title" data-aos="zoom-in">
+                    <i class="fas fa-camera-retro" style="color:#a855f7;"></i> Event Moments
+                </h3>
+                <div class="gallery-grid">
+                    <div class="gal-item glass gal-large" onclick="openGallery('ecell')" data-aos="zoom-in-up">
+
+                        <img src="Ecell/h1.jpg" alt="E-Cell Event Poster" class="gal-img">
+
+                        <div class="gal-overlay">
+                            <span class="gal-text">E-Cell Summit</span>
+                        </div>
+                    </div>
+                    <div class="gal-item glass gal-small" onclick="openGallery('workshop')" data-aos="zoom-in-up"
+                        data-aos-delay="100">
+
+                        <img src="Ecell/1.jpg" alt="Workshop Session Poster" class="gal-img-fast">
+
+                        <div class="gal-overlay">
+                            <span class="gal-text" style="font-size: 1rem;">Workshop Gallery</span>
+                        </div>
+                    </div>
+                    <div class="gal-item glass gal-small" onclick="openGallery('nss')" data-aos="zoom-in-up"
+                        data-aos-delay="200">
+
+                        <img src="NSS/Camp/1.jpg" alt="NSS Campaign Poster" class="gal-img-fast">
+
+                        <div class="gal-overlay">
+                            <span class="gal-text" style="font-size: 1rem;">NSS Campaign Gallery</span>
+                        </div>
+                    </div>
+                    <div class="gal-item glass gal-col2" onclick="openGallery('team')" data-aos="zoom-in-up"
+                        data-aos-delay="300">
+
+                        <img src="NSS/Orientation 2026/1.jpg" alt="Team Coordination Poster" class="gal-img-fast">
+                        <div class="gal-mix"></div>
+
+                        <div class="gal-overlay">
+                            <span class="gal-text" style="font-size: 1rem;">Overall NSS Event</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="zoom-in">
+                <h2 class="section-title">Let's <span class="text-primary">Connect</span></h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Info & Socials -->
+                <div data-aos="fade-right">
+                    <h3 class="contact-head">Open to Opportunities</h3>
+                    <p class="contact-desc">
+                        Currently looking for SDE roles, internships, or collaborative projects. Whether you have a
+                        question, a proposal, or just want to say hi, my inbox is always open!
+                    </p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon glass primary">
+                                <i class="fas fa-envelope" style="font-size:1.25rem;"></i>
+                            </div>
+                            <div>
+                                <h4 class="contact-label">Email</h4>
+                                <a href="mailto:akashchouhan939@gmail.com"
+                                    class="contact-val">akashchouhan939@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon glass secondary">
+                                <i class="fas fa-map-marker-alt" style="font-size:1.25rem;"></i>
+                            </div>
+                            <div>
+                                <h4 class="contact-label">Location</h4>
+                                <span style="color:#ffffff; font-weight:500;">India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/in/akash-chouhan-347116330/" target="_blank"
+                            class="social-link glass sl-in"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/akashchouhan335" target="_blank" class="social-link glass sl-gh"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/akash.chouhan143?igsh=ZndnbTJ4NHhlc3Zr" target="_blank"
+                            class="social-link glass sl-ig"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-box glass" data-aos="flip-right">
+                    <form id="contact-form" name="contact" method="POST" data-netlify="true" class="contact-form">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Name</label>
+                                <input type="text" name="name" required class="form-input form-input-p"
+                                    placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" required class="form-input form-input-p"
+                                    placeholder="Your Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <input type="text" name="subject" required class="form-input form-input-s"
+                                placeholder="Project Discussion">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea name="message" required rows="4" class="form-input form-input-p form-textarea"
+                                placeholder="Your message here..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit" style="margin-top: 0.5rem;">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+
+                        <p id="form-message" class="form-msg"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container" style="max-width:80rem; margin:0 auto;">
+            <p class="footer-text">
+                &copy; <span id="year"></span> Akash Chouhan. Designed with <i class="fas fa-heart footer-heart"></i>
+                for recruiters.
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP -->
+    <button id="scroll-top" class="scroll-top glass">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <div id="lightbox-counter" class="lightbox-counter" style="display: none;"></div>
+
+        <button id="lightbox-prev" class="lightbox-nav lightbox-prev" style="display:none;"
+            onclick="navigateLightbox(-1, event)">&#10094;</button>
+        <button id="lightbox-next" class="lightbox-nav lightbox-next" style="display:none;"
+            onclick="navigateLightbox(1, event)">&#10095;</button>
+
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Enlarged galview" class="lightbox-img"
+                style="transition: opacity 0.2s ease, transform 0.3s;">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
