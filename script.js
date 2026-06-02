@@ -1,11 +1,6 @@
-        // --- 1. Loader & Initialization ---
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-                AOS.init({ duration: 1000, easing: 'ease-out-cubic', once: true, offset: 50 });
-            }, 500);
+        // --- 1. Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 1000, easing: 'ease-out-cubic', once: true, offset: 50 });
         });
 
         document.getElementById('year').textContent = new Date().getFullYear();
