@@ -371,34 +371,34 @@
         // Add your 15-20 photos here! Just replace the 'src' URLs with your actual image links.
         const galleries = {
             ecell: [
-                { src: 'Ecell/h1.jpg', caption: 'Ecell Summit' }
+                { src: 'Ecell/h1.webp', caption: 'Ecell Summit' }
             ],
             nss: [
-                { src: 'NSS/Camp/1.jpg', caption: 'NSS Campaign - NSS CAMP 2025' },
-                { src: 'NSS/Camp/2.jpg', caption: 'Bouquet to Vice Chancellor' },
-                { src: 'NSS/Camp/3.jpg', caption: 'NSS Campaign - Volunteers' },
-                { src: 'NSS/Camp/4.jpg', caption: 'NSS CAMP DAY - 1' },
-                { src: 'NSS/Camp/5.jpg', caption: 'NSS Campaign' },
-                { src: 'NSS/Camp/6.jpg', caption: 'Appriciated by Faculty' },
-                { src: 'NSS/Camp/7.jpg', caption: 'NSS CAMP DAY - 2' },
-                { src: 'NSS/Camp/8.jpg', caption: 'NSS Education Campaign' },
-                { src: 'NSS/Camp/9.jpg', caption: 'Last Day Speech' },
-                { src: 'NSS/Camp/10.jpg', caption: 'NSS Campaign - Raily' },
+                { src: 'NSS/Camp/1.webp', caption: 'NSS Campaign - NSS CAMP 2025' },
+                { src: 'NSS/Camp/2.webp', caption: 'Bouquet to Vice Chancellor' },
+                { src: 'NSS/Camp/3.webp', caption: 'NSS Campaign - Volunteers' },
+                { src: 'NSS/Camp/4.webp', caption: 'NSS CAMP DAY - 1' },
+                { src: 'NSS/Camp/5.webp', caption: 'NSS Campaign' },
+                { src: 'NSS/Camp/6.webp', caption: 'Appriciated by Faculty' },
+                { src: 'NSS/Camp/7.webp', caption: 'NSS CAMP DAY - 2' },
+                { src: 'NSS/Camp/8.webp', caption: 'NSS Education Campaign' },
+                { src: 'NSS/Camp/9.webp', caption: 'Last Day Speech' },
+                { src: 'NSS/Camp/10.webp', caption: 'NSS Campaign - Raily' },
             ],
             workshop: [
                 // ⚠️ MAKE SURE THIS FIRST URL MATCHES YOUR HTML POSTER URL ⚠️
-                { src: 'Ecell/1.jpg', caption: 'Workshop Session - SIH Presentation' },
-                { src: 'Ecell/2.jpg', caption: 'Workshop Session - Team' },
-                { src: 'Ecell/5.jpg', caption: 'Esummit - Photo Session' },
-                { src: 'Ecell/6.jpg', caption: 'Esummit - Photo Session' },
+                { src: 'Ecell/1.webp', caption: 'Workshop Session - SIH Presentation' },
+                { src: 'Ecell/2.webp', caption: 'Workshop Session - Team' },
+                { src: 'Ecell/5.webp', caption: 'Esummit - Photo Session' },
+                { src: 'Ecell/6.webp', caption: 'Esummit - Photo Session' },
                 // Add the rest of your Workshop photos here...
 
             ],
             team: [
-                { src: 'NSS/Orientation 2026/1.jpg', caption: 'Team Coordination - Team Leader' },
-                { src: 'NSS/Orientation 2026/2.jpg', caption: 'Team Coordination - Certificate Distribution' },
-                { src: 'NSS/Orientation 2026/3.jpg', caption: 'Team Coordination - Execution' },
-                { src: 'NSS/Orientation 2026/4.jpg', caption: 'Team Coordination - Execution' }
+                { src: 'NSS/Orientation 2026/1.webp', caption: 'Team Coordination - Team Leader' },
+                { src: 'NSS/Orientation 2026/2.webp', caption: 'Team Coordination - Certificate Distribution' },
+                { src: 'NSS/Orientation 2026/3.webp', caption: 'Team Coordination - Execution' },
+                { src: 'NSS/Orientation 2026/4.webp', caption: 'Team Coordination - Execution' }
                 // Add the rest of your Team photos here...
             ]
         };
